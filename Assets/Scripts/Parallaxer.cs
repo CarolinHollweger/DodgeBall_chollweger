@@ -6,123 +6,41 @@ using UnityEngine;
 public class Parallaxer : MonoBehaviour
 {
 
-    class PoolObject
+    public GameObject obstacle;
+
+    private float timer;
+    private int offsetCounter = 1;
+    private int offsetDistance = 4; // Place obstacles in x units
+
+
+    // Use this for initialization
+    void Start()
     {
-        public Transform transform;
-        public bool inUse;
-        public PoolObject(Transform t) { transform = t; }
-        public void Use() { inUse = true; }
-        public void Dispose() { inUse = false; }
+        Debug.Log("'Parallaxer.cs' initialized.");
+        CreateWorld(offsetCounter);
     }
 
-    [System.Serializable]
-    public struct XSpawnRange
+    // Create world
+    void CreateWorld(int offset)
     {
-        public float min;
-        public float max;
-    }
-
-    public GameObject Prefab;
-    public int poolSize;
-    public float shiftSpeed;
-    public float spawnRate;
-
-    public XSpawnRange xSpawnRange;
-    public Vector3 defaultSpawnPos;
-    public bool spawnImmediate; //particle prewarm
-    public Vector3 immediateSpawnPos;
-    public Vector2 targetAscpectRatio;
-
-    float spawnTimer;
-    float targetAspect;
-
-    PoolObject[] poolObjects;
-
-    private void OnGameOverConfirmed()
-    {
-        for (int i = 0; i < poolObjects.Length; i++)
+        for (int i = 0; i < 8; i++)
         {
-            poolObjects[i].Dispose();
-            poolObjects[i].transform.position = Vector3.one * 1000;
-        }
-
-        if (spawnImmediate)
-        {
-            SpawnImmediate();
+            Instantiate(obstacle, new Vector2((i * 4) + Random.Range(1, 4) - 1, offset), Quaternion.identity, transform);
         }
     }
 
-
-    private void Configure()
+    // Update is called once per frame
+    void Update()
     {
-        targetAspect = targetAscpectRatio.x / targetAscpectRatio.x;
-        poolObjects = new PoolObject[poolSize];
-        for (int i = 0; i < poolObjects.Length; i++)
-        {
-            GameObject go = Instantiate(Prefab) as GameObject;
-            Transform t = go.transform;
-            t.SetParent(transform);
-            t.position = Vector3.one * 1000;
-            poolObjects[i] = new PoolObject(t);
-        }
+        timer += Time.deltaTime;
 
-        if (spawnImmediate)
+        if (timer > GlobalVariables.speed)
         {
-            SpawnImmediate();
+            offsetCounter = offsetCounter + offsetDistance;
+            CreateWorld(offsetCounter);
+            timer = timer - GlobalVariables.speed;
         }
     }
-
-    private void Spawn()
-    {
-        Transform t = GetPoolObject();
-        if (t == null) return; //if true, this indicates that poolSize is too small
-        Vector3 pos = Vector3.zero;
-        pos.y = (defaultSpawnPos.x * Camera.main.aspect) / targetAspect;
-        pos.x = Random.Range(xSpawnRange.min, xSpawnRange.max);
-        t.position = pos;
-    }
-
-    private void SpawnImmediate()
-    {
-        Transform t = GetPoolObject();
-        if (t == null) return; //if true, this indicates that poolSize is too small
-        Vector3 pos = Vector3.zero;
-        pos.y = (immediateSpawnPos.x * Camera.main.aspect) / targetAspect;
-        pos.x = Random.Range(xSpawnRange.min, xSpawnRange.max);
-        t.position = pos;
-    }
-
-    private void Shift()
-    {
-        for (int i = 0; i < poolObjects.Length; i++)
-        {
-            poolObjects[i].transform.position += -Vector3.right * shiftSpeed * Time.deltaTime;
-            CheckDisposeObject(poolObjects[i]);
-        }
-    }
-
-    private void CheckDisposeObject(PoolObject poolObject)
-    {
-        if (poolObject.transform.position.x < (-defaultSpawnPos.x * Camera.main.aspect) / targetAspect)
-        {
-            poolObject.Dispose();
-            poolObject.transform.position = Vector3.one * 1000;
-        }
-    }
-
-    private Transform GetPoolObject()
-    {
-        for (int i = 0; i < poolObjects.Length; i++)
-        {
-            if (!poolObjects[i].inUse)
-            {
-                poolObjects[i].Use();
-                return poolObjects[i].transform;
-            }
-        }
-        return null;
-    }
-
-
 
 }
+

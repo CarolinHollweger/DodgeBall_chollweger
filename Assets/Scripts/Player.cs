@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
     private const string AXISHORIZONTAL = "Horizontal";
 
     //configruation parameters
-    public float moveSpeed = 10.0f;
+    public float moveSpeed = 5.0f;
     public float xMin = 3.0f, xMax = 5.0f;
 
     // Use this for initialization
