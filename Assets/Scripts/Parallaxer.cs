@@ -9,8 +9,8 @@ public class Parallaxer : MonoBehaviour
     public GameObject obstacle;
 
     private float timer;
-    private int offsetCounter = 1;
-    private int offsetDistance = 4; // Place obstacles in x units
+    private int offsetCounter = 5;
+    private int offsetDistance = 1; // Place obstacles in x units
 
 
     // Use this for initialization
@@ -23,7 +23,7 @@ public class Parallaxer : MonoBehaviour
     // Create world
     void CreateWorld(int offset)
     {
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 7; i++)
         {
             Instantiate(obstacle, new Vector2((i * 4) + Random.Range(1, 4) - 1, offset), Quaternion.identity, transform);
         }
