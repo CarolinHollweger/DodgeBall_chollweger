@@ -3,9 +3,9 @@ Goal of the game is to avoid collision with moving a ball, entering the screen f
 
 *Screenshots
 ![Concept](./Screenshots/DodgeBall.jpeg)
-![Concept](./Screenshots/Welcome.jpeg)
-![Concept](./Screenshots/MainScrene.jpeg)
-![Concept](./Screenshots/GameOver.jpeg)
+![Welcome](./Screenshots/Welcome.png)
+![MainScrene](./Screenshots/MainScrene.png)
+![GameOver](./Screenshots/GameOver.png)
 
 *Development Platform
 -macOS Mojave version 10.14
