@@ -10,7 +10,7 @@ public class Parallaxer : MonoBehaviour
 
     private float timer;
     private int offsetCounter = 5;
-    private int offsetDistance = 1; // Place obstacles in x units
+    private int offsetDistance = 2; // Place obstacles in x units
 
 
     // Use this for initialization
