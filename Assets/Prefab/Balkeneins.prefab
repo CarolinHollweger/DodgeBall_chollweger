@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212337678099034320}
   - component: {fileID: 61604708510692032}
   m_Layer: 0
-  m_Name: Balkeneins (1) 1
+  m_Name: Balkeneins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

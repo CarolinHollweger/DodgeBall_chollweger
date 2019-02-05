@@ -2,9 +2,13 @@
 Goal of the game is to avoid collision with moving a ball, entering the screen from the top down to the bottom. The player is able to move left and right. DodgeBall is a game developed with Unity and build for desktop. 
 
 *Screenshots
+-Concept
 ![Concept](./Screenshots/DodgeBall.jpeg)
+-Welcome Scene
 ![Welcome](./Screenshots/Welcome.png)
-![MainScrene](./Screenshots/MainScrene.png)
+-Main Scene
+![MainScrene](./Screenshots/MainScene.png)
+-GameOver Scene
 ![GameOver](./Screenshots/GameOver.png)
 
 *Development Platform
@@ -15,11 +19,14 @@ Goal of the game is to avoid collision with moving a ball, entering the screen f
 *Target Platform
 -pc
 
-*Progress (100% Done)
+*Progress (95% Done)
 - User interface
 - Generate world (random)
 - Add stopwatch
 - Player interaction with world (collisions etc.)
+
+*Scripts
+-Parallaxer Script: inspired by Valerian TSCHOPP
 
 *Lessons Learned
 Steuerung mit Pfeiltasten, richtiges Anlegen von 2D Szenen, Buttons anlegen, Time Counter programmieren, Spawnen von Objekten, C# Basics

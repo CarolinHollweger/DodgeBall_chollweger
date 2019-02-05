@@ -429,7 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f6ced438af6a4db385743b2403fd20d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle: {fileID: 1729437565324100, guid: f6f2acbf1f46e4c77862a8f03453daea, type: 2}
+  obstacle: {fileID: 1729437565324100, guid: 75f9a6b9345ad4c709f004419efd0021, type: 2}
 --- !u!4 &498720670
 Transform:
   m_ObjectHideFlags: 0
