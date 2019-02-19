@@ -19,6 +19,10 @@ Goal of the game is to avoid collision with moving a ball, entering the screen f
 *Target Platform
 -pc
 
+*Trailer
+"https://youtu.be/MSdy6Ck-Knw"
+DodgeBall I Carolin Hollwger
+
 *Progress (95% Done)
 - User interface
 - Generate world (random)
