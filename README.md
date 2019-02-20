@@ -1,7 +1,7 @@
 *DodgeBall - What's it about?
 Goal of the game is to avoid collision with moving a ball, entering the screen from the top down to the bottom. The player is able to move left and right. DodgeBall is a game developed with Unity and build for desktop. 
 
-*Screenshots
+*Screenshot
 -Concept
 ![Concept](./Screenshots/DodgeBall.jpeg)
 -Welcome Scene
