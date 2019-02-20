@@ -1,5 +1,5 @@
 *DodgeBall - What's it about?
-Goal of the game is to avoid collision with moving a ball, entering the screen from the top down to the bottom. The player is able to move left and right. DodgeBall is a game developed with Unity and build for desktop. 
+Goal of the game is to avoid collision with moving a ball, entering the screen from the top down to the bottom. The player is able to move left and right. DodgeBall is a game developed with Unity and build for desktop. It's a 2D game. 
 
 *Screenshot
 -Concept
@@ -11,7 +11,8 @@ Goal of the game is to avoid collision with moving a ball, entering the screen f
 -GameOver Scene
 ![GameOver](./Screenshots/GameOver.png)
 
-*Runtime Version: 
+*Runtime Version: .NET 3.5 Equivalent
+*API Level_  .NET 2.0 Subseta
 
 *Development Platform
 -macOS Mojave version 10.14
@@ -19,7 +20,7 @@ Goal of the game is to avoid collision with moving a ball, entering the screen f
 -VS 7.7.0.1868
 
 *Target Platform
--pc
+-pc Standalone (1024x768)
 
 *Trailer
 "https://youtu.be/MSdy6Ck-Knw"
