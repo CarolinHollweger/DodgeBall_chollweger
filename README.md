@@ -14,7 +14,7 @@ Goal of the game is to avoid collision with moving a ball, entering the screen f
 ![GameOver](./Screenshots/GameOver.png)
 
 *Runtime Version: .NET 3.5 Equivalent
-*API Level_  .NET 2.0 Subseta
+*API Level_  .NET 2.0 Subset
 
 *Development Platform
 -macOS Mojave version 10.14
